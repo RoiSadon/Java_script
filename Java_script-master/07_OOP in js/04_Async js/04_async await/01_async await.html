@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+
+    //await used to wait for a promise to resolve or reject.
+    // It can only be used inside an async function.
+    function f(n){
+        return new Promise((x,y)=>{x(n**n)});
+    }
+    f(4).then(x=>console.log("Normal call: ",x))
+    .then((x)=>{console.log("end")})
+    .catch(()=>{console.log("Error")});
+
+
+    // async function - always returns Promise. 
+    // if the code inside isn't promise - it will be converted to Promise. 
+    async function f2(){
+        let res = await f(4);
+        console.log("Await call: ",res);
+    }
+    f2();
+
+    // example of async function:
+    async function a(){
+        return 1;
+    }
+    a().then(alert);
+
+
+    // async func that returns Promise.
+    async function b(){
+        return Promise.resolve(5);
+    }
+    b().then(alert);
+
+
+    // Await: will be only inside async func
+    async function ftry() {
+
+    let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+        });
+        let res = await Promise;
+        alert(res);
+    }
+
+    ftry();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

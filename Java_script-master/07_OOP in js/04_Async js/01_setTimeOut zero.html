@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+       console.log('line 1');
+       
+       // The trick here: 0 will wait in line until 
+       // all lines are done!
+       setTimeout(()=>{console.log("line 2");},0);
+
+       console.log('line 3');  
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

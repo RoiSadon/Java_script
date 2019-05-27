@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function func(param){
+            document.getElementById("res").innerHTML += `<p>${param.type}</p>` 
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="func(event)"> click me</button>
+    <button onmousemove="func(event)"> mouseover me</button>
+    <button onmouseout="func(event)"> mouseout me</button>
+    
+    <div id="res"></div>
+</body>
+
+</html>

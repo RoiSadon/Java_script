@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        
+        // if true - "OK" else - "NOT OK"
+        let globalVar = true;
+
+        // Constructr:
+        function MyPromise(func){
+            let resolve, reject;
+            this.then = (f1) =>{
+                resolve = f1;
+                return this;
+            }
+            this.catch = (f2)=>{
+                reject =f2;
+                return this;
+            }
+            this.demo = ()=>{
+                func(resolve,reject);
+            }
+        }
+
+        // new instance of Constructr MyPromise
+        let p = new MyPromise((resolve,reject)=>{
+            setTimeout(()=>{
+                globalVar ? resolve("OK"): reject("NOT OK");
+            },2000)
+        });
+
+        // will print the result to console:
+        p
+        .then((x) => { console.log("resolve got: ", x) })
+        .catch((err) => { console.log("reject got: ", err) });
+
+        // activate function 
+        p.demo();
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

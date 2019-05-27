@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function addEvent(){
+            document.getElementById("btn").addEventListener("click",
+            (p)=>{console.log(p)})
+        }
+    </script>
+</head>
+<body onload="addEvent()">
+    <button id="btn">Click me</button>
+</body>
+</html>

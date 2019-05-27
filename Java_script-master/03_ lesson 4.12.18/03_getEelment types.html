@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Get elements</title>
+    <script>
+        function func(){
+
+            // This is how we can manipulate or use element from HTML page 
+            // In our js code:
+
+            // All elements that are from type p:
+            let e1 = document.getElementsByTagName("p");
+            
+            // Gets only one element by ID:
+            let e2 = document.getElementById("res");
+
+            // All elements that are from type h1:
+            let e3 = document.getElementsByTagName("h1");
+
+             // All elements that are from specific class:
+            let e4 = document.getElementsByClassName("cls");
+
+        }
+    
+    </script>
+</head>
+<body onload="func()">
+    <h1>Hello</h1>
+    <p id="res">using id</p>
+    <p class="cls">1.using class "cls"</p>
+    <p class="cls">2.using class "cls"</p>
+</body>
+</html>

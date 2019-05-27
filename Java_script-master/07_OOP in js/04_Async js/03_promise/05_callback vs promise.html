@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // because we use THEN - the next then will be activated 
+        // only when the one above it will end. 
+        // printed- numbre 1, number 4, number 2.
+        // even thouhgh the times are diffrent. 
+      new Promise((resolve, reject) => {
+            setTimeout(
+                () => {
+                    console.log(`Timer number 1, waited 2 sec (${(new Date()).toLocaleTimeString()})`);
+                    resolve();
+                }, 2 * 1000)
+        })
+            .then(() => new Promise((resolve, reject) => {
+                setTimeout(
+                    () => {
+                        console.log(`Timer number 2, waited 4 sec (${(new Date()).toLocaleTimeString()})`);
+                        resolve();
+                    }, 4 * 1000)
+            }))
+            .then(() => new Promise((resolve, reject) => {
+                setTimeout(
+                    () => {
+                        console.log(`Timer number 3, waited 1 sec (${(new Date()).toLocaleTimeString()})`);
+                        resolve();
+                    }, 1 * 1000)
+            }));    
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

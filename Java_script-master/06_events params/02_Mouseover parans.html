@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #res{
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+    
+    p{
+        padding:40px;
+        font-size: xx-large;
+    }
+
+    </style>
+    <script>
+    
+    function func(param){
+        document.getElementById("res").innerHTML = `
+        <p>x: ${param.x}</p>
+        <p>y: ${param.y}</p>
+        `
+    }
+    </script>
+
+
+
+</head>
+<body>
+    <div id="res" onmousemove="func(event)"></div>
+</body>
+</html>

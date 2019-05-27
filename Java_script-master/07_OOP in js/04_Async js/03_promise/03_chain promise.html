@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    
+let a = false;
+
+let p = new Promise((x,y)=>{a? x("OK"): y("NOT OK")});
+
+p
+    .then((x)=>{console.log("Resolve 1 got:",x)})
+    .then((y)=>{
+        console.log("Resolve 2 got:",y)
+        return 5;
+    })
+    .then((z)=>{
+        console.log("Resolve 3 got:",z)
+    })
+    .catch((e)=>{console.log("Reject got:",e)})</script>>
+</head>
+<body>
+    
+</body>
+</html>

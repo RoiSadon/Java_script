@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    function func(param){
+        document.getElementById("res").innerHTML +=`
+        <li>key: ${param.key} |  keyCode: ${param.keyCode}</li>`
+    }
+
+
+</script>
+</head>
+<body >
+    <h1>This page will output the ascii of letters:</h1>
+    <label>Enter text:</label>
+    <input type="text" onkeydown="func(event)"/>
+
+    <div>
+    <h1>The unicode of the input:</h1>
+    <ul id="res"></ul>
+</div>
+</body>
+</html>

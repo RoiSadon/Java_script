@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+            button {
+                display: inline-block;
+                margin: 50px;
+            }
+            .c1 {
+                color: rgb(179, 84, 179), 41, 110);
+            }
+            .c2 {
+                border-color: rgb(152, 212, 112);
+                border-width: 2px;
+                border-style: dashed;
+            }
+        </style>
+
+        <script>
+            function changeContent() {
+                let e = document.getElementById("res");
+                e.innerHTML = "<span>Ariel <br/> Uni </span>";
+            }
+
+            function changeText(){
+                let e=document.getElementById("res");
+                e.innerText = "<span>Ariel <br/> Uni </span>";
+            }
+
+            function changeBackground(){
+                let e = document.getElementById("res");
+                e.style.backgroundColor = "#ff0066";
+            }
+
+            function addEvent(){
+                let e = document.getElementById("res");
+                e.addEventListener("mouseover",()=>{
+                    alert(" Mouse Over");
+                });
+            }
+
+            function addClass(){
+                let e = document.getElementById("res");
+                e.classList.add("c1");
+            }
+
+            // Toggle - will change in every click back and forward
+            function toggleClass() {
+                let element = document.getElementById("res");
+                element.classList.toggle("c2");
+            }
+        
+        
+        </script>
+</head>
+<body>
+    <h1 id="res">Hello</h1>
+
+    <button onclick="changeContent()">changeContent</button>
+    <button onclick="changeText()">changeText</button>
+    <button onclick="changeBackground()">changeBackground</button>
+    <button onclick="addEvent()">addEvent</button>
+    <button onclick="addClass()">addClass</button>
+    <button onclick="removeClass()">removeClass</button>
+    <button onclick="toggleClass()">toggleClass</button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>cool</title>
+    <script>
+        let arr=[];
+
+        function loadCountry(){
+            let req= new XMLHttpRequest();
+            req.open("GET","https://restcountries.eu/rest/v2/all?fields=name;flag");
+
+            req.onreadystatechange = ()=>{
+                    if(req.readyState==4){
+                        arr = JSON.parse(req.response);
+
+                        let str="";
+                        for(i=0;i<arr.length;i++){
+                            str += `<option value= ${arr[i].name}>${arr[i].name}</option>`;
+                        }
+
+                        document.getElementById("drop").innerHTML = str;
+                    }
+            }
+            req.send();
+        }
+
+        function showFlag(){
+            let selected = document.getElementById("drop").value;
+            let country = arr.find( e => e.name.startsWith(selected));
+
+            document.getElementById("res").innerHTML = `<img src="${country.flag}" width="200"/>`;
+        }
+    </script>
+</head>
+<body onload="loadCountry()">
+    <h1>Country app</h1>
+    <select id="drop" onchange="showFlag()"> 
+    </select>
+    <hr/>
+    <div id="res"></div>
+</body>
+</html>

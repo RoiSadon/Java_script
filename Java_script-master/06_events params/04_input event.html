@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function func(param){
+            newC = param.target.value;
+            document.getElementById("res").style.backgroundColor = newC;
+        }
+    </script>
+</head>
+<body>
+    <label>Choose a color:</label>
+    <input type="color" onchange="func(event)"/>
+    <hr/>
+    <label id="res">this is cool</label>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    function func(param){
+        let randomColor = `rgb(${getRand()},${getRand()},${getRand()})`;
+
+        // param target - is the html element that raises the event:
+        param.target.style.borderColor = randomColor;
+
+        //take the value of the input tag and chamge it to upperCase
+        param.target.value = param.target.value.toUpperCase();
+
+
+    }
+    function getRand(){
+        return parseInt(Math.random()*255);
+    }
+    </script>
+</head>
+<body>
+    <label>Enter text: (get it in Upper-case)</label>
+    <input type="text" onchange="func(event)"/>
+
+</body>
+</html>

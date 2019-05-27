@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function addEventToRadio(){
+            let arr = document.getElementsByName("drink");
+            for(let i=0;i<arr.length; i++){
+                arr[i].addEventListener("change",func);
+            }
+        }
+
+
+        function func(param){
+            document.getElementById("res").innerHTML = param.target.value;
+        }
+    </script>
+</head>
+<body onload="addEventToRadio()">
+
+
+    <!--
+        Radio buttons are normally presented in groups 
+        (a collection of radio buttons describing a set of related options). 
+        Only one radio button in a group can be selected at the same time.
+    -->
+
+    <h1>The best drink is:</h1>
+    <div>
+        <input type="radio" value="Wine" name="drink"/>
+        <label>Wine</label>
+    </div>
+    <div>
+           
+            <input type="radio" value="Water" name="drink"/>
+            <label>Water</label>
+    </div>
+    <div>
+      
+            <input type="radio" value="Cofee" name="drink"/>
+            <label>Cofee</label>
+    </div>
+
+    <h2>your choice: <span id="res"></span></h2>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // Define object that will let us send client request to server
+        let req = new XMLHttpRequest();
+
+        // Define req type, and address to go- 
+        req.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+
+        // Show function state: (by readyState)
+        req.onreadystatechange = () => {
+            if (req.readyState == 4) //4 is a state that the request is done, and the response is back
+                console.log(req.status, req.response);
+        }
+
+        // Send request to the server:
+        req.send();
+        
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
